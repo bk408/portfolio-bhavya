@@ -6,7 +6,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 
 
 const Landing = ({setSelectedPage}) => {
-    const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
+    const  isAboveLarge = useMediaQuery("(min-width: 1060px)");
 
     return (
         <section id="home" className="md:flex md:justify-between md:items-center md:h-full gap-16 py-10">
@@ -15,7 +15,7 @@ const Landing = ({setSelectedPage}) => {
 
        {/* IMAGE SECTION */}
        <div className="md:order-2 flex justify-center basis-3/5 z-10 mt-16 md:mt-32">
-        {isAboveMediumScreens ? (
+        { isAboveLarge? (
             <div className="relative z-0 ml-20 before:absolute before:-top-20 before:-left-20 before:rounded-t-[400px]
             before:w-full before:max-w-[400px] md:before:max-w-[600px] before:h-full before:border-2 before:border-blue before:z-[-1]">
 
@@ -30,7 +30,7 @@ const Landing = ({setSelectedPage}) => {
         ) : (
             <img 
                   alt="profile"
-                  className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]"
+                  className="z-10 w-full max-w-[400px] md:max-w-[600px]"
                   src="assets/bk17.png"
                   
                 />
@@ -67,9 +67,7 @@ const Landing = ({setSelectedPage}) => {
                 My name is Bhavya Khatri and I'm a front-end developer with a passion for creating intuitive, visually appealing, and responsive websites.
                 </p>
 
-            </motion.div
-            
-            >
+            </motion.div>
 
             {/* CALL TO ACTIONS */}
 
@@ -125,13 +123,9 @@ const Landing = ({setSelectedPage}) => {
 
         </div>
 
-       
-
-
-
         </section>
-    )
-}
+    );
+};
 
 
 export default Landing;
